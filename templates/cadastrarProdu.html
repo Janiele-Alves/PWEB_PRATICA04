@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <title>Cadastrar produto</title>
+<center>
+    <h1>Adicionar um novo produto</h1>
+    <form action="/add" method="post">
+        <label for="nome">Nome do produto:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+        <label for="codigo">Código do produto:</label>
+        <input type="text" id="codigo" name="codigo" required><br><br>
+        <label for="valor">Preço do produto:</label>
+        <input type="text" id="valor" name="valor" required><br><br>
+        <input type="submit" value="Adicionar">
+    </form>
+
+</center>
+{% endblock %}
