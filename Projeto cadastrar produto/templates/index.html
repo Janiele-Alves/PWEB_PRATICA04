@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <title>Cadastro de produtos</title>
+<center>
+    <h1>Lista de produtos</h1><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th> &nbsp; &nbsp;
+                <th>Código</th> &nbsp; &nbsp;
+                <th>Valor</th> &nbsp; &nbsp;
+                <th>Ações</th> &nbsp; &nbsp;
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+            <tr>
+                <td>{{ produto['nome'] }}</td> &nbsp;
+                <td>{{ produto['codigo'] }}</td> &nbsp;
+                <td>{{ produto['valor'] }}</td> &nbsp;
+                <td>
+                    <a class="Editar_Excluir" href="/edit/{{ loop.index0 }}">Editar</a>
+                    <a class="Editar_Excluir" href="/delete/{{ loop.index0 }}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>
+        <a class='Novo_produto' href="/add">Adicionar produto</a>
+    </h2>
+</center>
+{% endblock %}
